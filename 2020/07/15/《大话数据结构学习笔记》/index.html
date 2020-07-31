@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="今天主要学习了绪论、线性表和单链表三章（看到静态链表这里） 绪论和算法这作者也是挺有意思，模拟上课来给讲数据结构。 首先来看“数据结构”这个定义：  相互之间存在一种或多种特定关系的数据元素的集合。  说到这个特定关系，作者接下去讲， 提到了逻辑结构和物理结构这两种不同的结构。 逻辑结构（面向问题）主要有： 1.集合结构2.线性结构3.树形结构4.图形结构 在集合关系中每个元素彼此都没有关系；在线">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《大话数据结构》 学习笔记 1">
+<meta property="og:url" content="http://www.crazygriferman.com/2020/07/15/《大话数据结构学习笔记》/index.html">
+<meta property="og:site_name" content="锁眼里看世界">
+<meta property="og:description" content="今天主要学习了绪论、线性表和单链表三章（看到静态链表这里） 绪论和算法这作者也是挺有意思，模拟上课来给讲数据结构。 首先来看“数据结构”这个定义：  相互之间存在一种或多种特定关系的数据元素的集合。  说到这个特定关系，作者接下去讲， 提到了逻辑结构和物理结构这两种不同的结构。 逻辑结构（面向问题）主要有： 1.集合结构2.线性结构3.树形结构4.图形结构 在集合关系中每个元素彼此都没有关系；在线">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2020/08/01/2pZkGCns6tESINX.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/08/01/7rlYUsOCxJymRP3.jpg">
+<meta property="og:updated_time" content="2020-07-31T17:49:50.981Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《大话数据结构》 学习笔记 1">
+<meta name="twitter:description" content="今天主要学习了绪论、线性表和单链表三章（看到静态链表这里） 绪论和算法这作者也是挺有意思，模拟上课来给讲数据结构。 首先来看“数据结构”这个定义：  相互之间存在一种或多种特定关系的数据元素的集合。  说到这个特定关系，作者接下去讲， 提到了逻辑结构和物理结构这两种不同的结构。 逻辑结构（面向问题）主要有： 1.集合结构2.线性结构3.树形结构4.图形结构 在集合关系中每个元素彼此都没有关系；在线">
+<meta name="twitter:image" content="https://i.loli.net/2020/08/01/2pZkGCns6tESINX.jpg">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://www.crazygriferman.com/2020/07/15/《大话数据结构学习笔记》/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>《大话数据结构》 学习笔记 1 | 锁眼里看世界</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">锁眼里看世界</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-english-learning">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/English-Learning" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>英语学习</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-technology">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/technology" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-life">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/life" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>生活</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-reading">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/reading" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>阅读</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-thinking">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/thinking" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>思考</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.crazygriferman.com/2020/07/15/《大话数据结构学习笔记》/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="天下5912">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/IMG_2867.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="锁眼里看世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《大话数据结构》 学习笔记 1
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-15 23:05:42" itemprop="dateCreated datePublished" datetime="2020-07-15T23:05:42+08:00">2020-07-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-08-01 01:49:50" itemprop="dateModified" datetime="2020-08-01T01:49:50+08:00">2020-08-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/technology/" itemprop="url" rel="index"><span itemprop="name">technology</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2020/07/15/《大话数据结构学习笔记》/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/15/《大话数据结构学习笔记》/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2020/07/15/《大话数据结构学习笔记》/" class="leancloud_visitors" data-flag-title="《大话数据结构》 学习笔记 1">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>今天主要学习了绪论、线性表和单链表三章（看到静态链表这里）</p>
+<h1 id="绪论和算法"><a href="#绪论和算法" class="headerlink" title="绪论和算法"></a>绪论和算法</h1><p>这作者也是挺有意思，模拟上课来给讲数据结构。</p>
+<p>首先来看“数据结构”这个定义：</p>
+<blockquote>
+<p>相互之间存在一种或多种特定关系的数据元素的集合。</p>
+</blockquote>
+<p>说到这个特定关系，作者接下去讲， 提到了逻辑结构和物理结构这两种不同的结构。</p>
+<h2 id="逻辑结构（面向问题）"><a href="#逻辑结构（面向问题）" class="headerlink" title="逻辑结构（面向问题）"></a>逻辑结构（面向问题）</h2><p>主要有：</p>
+<p>1.集合结构<br>2.线性结构<br>3.树形结构<br>4.图形结构</p>
+<p>在集合关系中每个元素彼此都没有关系；在线性结构中一个元素接着一个元素；在树形结构中是有上下级的关系；而在图形结构中，元素之间就像一个一个结点，互相连接了起来。</p>
+<p>这让我想到了企业的不同架构。</p>
+<p>图形结构有点像那种创业公司的人员架构，每个人和每个人都是“平等”的。而树形结构是有上下级关系，对应了领导和普通员工。线性结构也许就是一个个的部门？（关于这个线性我没想到什么可以作类比的）还有这个集合结构让我想到了一些效率低下的企业里，也许他们部门与部门直接就像集合结构，虽然同属一家企业，但是彼此没有<br>联系。</p>
+<hr>
+<h2 id="物理结构（面向计算机）"><a href="#物理结构（面向计算机）" class="headerlink" title="物理结构（面向计算机）"></a>物理结构（面向计算机）</h2><p>物理结构主要指的是存储的结构，具体一点，就是数据的逻辑上的结构存储在计算机中的形式，主要有：</p>
+<p>1.顺序存储（排队）<br>2.链式存储（可以连续或不连续）</p>
+<hr>
+<p>在算法的设计要求里，有一点我觉得很有意思，就是<strong>“健壮性”</strong>，按我来理解，就是要有处理异常的能力，在任何情况下都能“得心应手”，有能够应对任何bug的能力（我也希望我写的程序能有这种能力！）</p>
+<p>另外，作者由函数的渐进增长引入了<strong>算法的时间复杂度</strong>这个概念🌟（这个非常重要！）</p>
+<blockquote>
+<p>T(n) = O(f(n))</p>
+</blockquote>
+<p>这里的时间复杂度指的是，随问题规模n的增大，算法执行时间的增长率 = 函数f(n)的增长率</p>
+<p>那我们该如何判断一个算法是不是好的算法呢？这里作者给出一种评判的方式：</p>
+<p>当n增大时，T(n)增长最慢，此时就是最优的算法。</p>
+<p>而对于O(n)的推导方式，我也是第一次见：</p>
+<p>1.用1取代运行中的加法常数。<br>2.只保留最高阶项。<br>3.若有最高阶且还是1，则去除与这个项相乘的常数。</p>
+<p>它讲是这么讲，但是我觉得这个和求函数极限很像，就是可以用洛必达的场合。常数求导之后都是0，所以无论你是100，还是1，都没区别。而对于n的乘方，只要看分母分子最高此项，前面的系数是多少，他们的极限就按照那个比值来。延伸到这个O(n)上来，就是$$ x ^2 和 \frac{1}{2}x^2$$</p>
+<p>这两个的增长速度其实一样，所以求时间复杂度的时候，只需要取最高次就行，并且舍去它的系数。</p>
+<p>对应时间复杂度，还有空间复杂度，指的是f(n)为语句关于n所占存储空间的函数。</p>
+<p>S(n) = O(f(n))</p>
+<p>f(n)为语句关于n所占存储空间的函数。</p>
+<h1 id="线性表的顺序存储结构"><a href="#线性表的顺序存储结构" class="headerlink" title="线性表的顺序存储结构"></a>线性表的顺序存储结构</h1><p>$$ \bigcirc-\bigcirc-\bigcirc-\bigcirc$$</p>
+<p>就像上面所列的那样，线性表就是由一个一个元素排好队的一种数据的结构。</p>
+<p>当n=0的时候，我们称之为空表。</p>
+<p>$$a_i为第i个与元素，i为a_i在线性表中的位序$$</p>
+<p>线性表的长度就是线性表元素的个数。</p>
+<p>⚠️注意：线性表一般用数组存储数据，所以线性表中第i个元素，就是数组中的第i-1个元素。</p>
+<p>在线性表这章中，作者主要给我们复先了关于线性表的一些函数，包括：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.InitList(*L); //初始化一个空的线性表L</span><br><span class="line">2.ListEmpty(*L);</span><br><span class="line">3.ClearList(*L);</span><br><span class="line">4.GetElem(L,i,*e);</span><br><span class="line">5.LocateElem(L,e);</span><br><span class="line">6.ListInsert(*L,i,e);</span><br><span class="line">7.ListDelete(*L,i,e);</span><br><span class="line">8.ListLength(L);</span><br></pre></td></tr></table></figure>
+
+<p>在我看了书中用c语言求并集的代码之后，我感觉我在上c++的课时是多么的蠢😭</p>
+<p>首先，我们需要给出线性表顺序存储结构的代码，我看了之后才发觉自己之前写的问题好大…..作者把0、1还有数据类型全都自己定义了下，应该是为了之后方便吧。</p>
+<h2 id="准备工作（学习写法）"><a href="#准备工作（学习写法）" class="headerlink" title="准备工作（学习写法）"></a>准备工作（学习写法）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#define MAXSIZE 100</span><br><span class="line">typedef int ElemType; //这里作者把int用ElemType替代，这种写法应该学习.</span><br><span class="line">typedef struct&#123;</span><br><span class="line"></span><br><span class="line">    ElemTYpe data[MAXSIZE];</span><br><span class="line">    int length;</span><br><span class="line"></span><br><span class="line">&#125;SqList;</span><br><span class="line"></span><br><span class="line">//还有另外一些准备工作</span><br><span class="line"></span><br><span class="line">#define OK 1</span><br><span class="line">#define ERROR 0</span><br><span class="line">#define TRUE 1</span><br><span class="line">#define FALSE 0</span><br><span class="line">typedef int Status //为了定义之后函数返回的值做准备，由于返回的是OK或者是ERROR，所以没有bool类型</span><br></pre></td></tr></table></figure>
+
+<h2 id="求并集"><a href="#求并集" class="headerlink" title="求并集"></a>求并集</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void unionL(List *La,List Lb)&#123;</span><br><span class="line"></span><br><span class="line">    int La_len,Lb_len,i;</span><br><span class="line">    ElemType e;</span><br><span class="line">    La_len = ListLength(*La);</span><br><span class="line">    Lb_len = ListLength(Lb);</span><br><span class="line">    for(i = 0;i &lt;= Lb_len;i++)&#123;</span><br><span class="line">        </span><br><span class="line">        GetElem(Lb,i,&amp;e); //这里e取引用是因为下面要把e插入La中</span><br><span class="line">        if(!LocateElem(*La, e)) //如果La中没有e</span><br><span class="line">            ListInsert(La,++La_len, e);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>我发现作者在后面写代码的时候，都会把要写的东西的思路先写一遍，然后再写，我想我应该也要养成这样的习惯！所以学这本书的时候我没用电脑敲，是直接在纸上写的。</p>
+<h2 id="获得某个元素"><a href="#获得某个元素" class="headerlink" title="获得某个元素"></a>获得某个元素</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Status GetElem(SqList L, int i, ElemType *e)&#123;</span><br><span class="line"></span><br><span class="line">    if(L.length ==0 || i&lt; 0 || i &gt; L.length) //要确保i在线性表的长度范围内，查找异常</span><br><span class="line">        return ERROR;</span><br><span class="line">    *e = L.data[i-1]; //线性表的长度就是数组的长度，所以长度会自动记录，不用的担心！只需看元素就行。</span><br><span class="line">    return OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入某个元素"><a href="#插入某个元素" class="headerlink" title="插入某个元素"></a>插入某个元素</h2><p>思路：</p>
+<p>1.若插入位置不对，则抛异常.<br>2.若线性表的长度&gt;=数组长度，则抛异常火增加数组长度<br>3.把i后面的元素，每个都往后挪一个位置(具体实现的时候这个很有讲究，要从最后一个开始挪，如果是从第i个开始挪的话，由于数组每个位置只能存储一个元素，当第i个往后挪的时候，第i+1个元素会被覆盖掉，后面同理，所以要从最后一个开始挪)<br>4.将元素插入到i处。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Status ListInsert(SqList *L, int i, ElemType e)&#123;</span><br><span class="line"></span><br><span class="line">    int k;</span><br><span class="line">    if(L -&gt; length == MAXSIZE)</span><br><span class="line">        return ERROR;</span><br><span class="line">    if(i &lt; 1 || i &gt; L -&gt; length + 1)</span><br><span class="line">        return ERROR;</span><br><span class="line">    if(i &lt;= L -&gt; length)&#123;</span><br><span class="line">    </span><br><span class="line">        for(k = L-&gt; length - 1;k&gt;=i-1;k--) //从最后一个开始遍历到第i个</span><br><span class="line">            L-&gt;data[k+1] = L-&gt;data[k];</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    L-&gt;data[i-1] = e;</span><br><span class="line">    L-&gt;length++;</span><br><span class="line">    return OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除某个元素"><a href="#删除某个元素" class="headerlink" title="删除某个元素"></a>删除某个元素</h2><p>思路：<br>1.删除的位置不合理时抛异常；<br>2.取出要被删除的元素；<br>3.从被删除的位置开始遍历到最后一个与元素位置，将它们都向前移动一格；<br>4.表长-1</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Status ListDelete(SqList *L,int i, ElemType *e)&#123;</span><br><span class="line"></span><br><span class="line">    int k;</span><br><span class="line">    if(L -&gt; length == 0)</span><br><span class="line">        return ERROR;</span><br><span class="line">    if(i&lt;1 || i&gt; L-&gt;length)</span><br><span class="line">        return ERROR;</span><br><span class="line">    *e = L-&gt;data[i-1]; //取出来之后原来在数组里的元素就可以被覆盖了</span><br><span class="line">    if(i&lt; L-&gt;length)&#123;</span><br><span class="line">    </span><br><span class="line">        for(k = i; k&lt; L-&gt; length; k++) //已经取出来了就可以被覆盖了</span><br><span class="line">            L-&gt;data[k-1] = L-&gt;data[k];</span><br><span class="line">    &#125;</span><br><span class="line">    L-&gt;length--;</span><br><span class="line">    return OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果让我一句话总结，那就是：</p>
+<p><strong>线性表的顺序存储查找元素方便(O(1))，但是插入和删除元素麻烦(O(n))。</strong></p>
+<hr>
+<h1 id="线性表的链式存储结构（链表）"><a href="#线性表的链式存储结构（链表）" class="headerlink" title="线性表的链式存储结构（链表）"></a>线性表的链式存储结构（链表）</h1><p>如果我们要频繁插入和删除元素，那么用链式存储比较方便，而它的缺点就是查找元素比较麻烦。</p>
+<p>首先得了解数据域指针域这两个概念</p>
+<p>数据域：存储数据元素信息的域（存储10、100、-1这种数值的）</p>
+<p>指针域：存储指针后继位置的域</p>
+<p>链式存储区别于顺序存储的地方，在于它有一个叫结点（Node）的概念，结点既存储了<strong>元素信息</strong>，也存储了<strong>位置信息。</strong></p>
+<p>用结构指针来描述链表:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typedef struct Node&#123;</span><br><span class="line"></span><br><span class="line">    ElemType data;</span><br><span class="line">    struct Node *next;</span><br><span class="line">&#125;Node;</span><br><span class="line">typedef struct Node *LinkList;</span><br><span class="line"></span><br><span class="line">p-&gt;data 的值为数据的元素，存储的是元素信息</span><br><span class="line">p-&gt;next 的值为指针，存储的是位置信息</span><br></pre></td></tr></table></figure>
+
+<h2 id="在单链表中获取第i个元素"><a href="#在单链表中获取第i个元素" class="headerlink" title="在单链表中获取第i个元素"></a>在单链表中获取第i个元素</h2><p>思路：</p>
+<p>1.声明指针p指向链表的第一个结点,并初始化j为计数器（记录当前位置）<br>2.当j&lt;i，遍历链表，使p不断向后移动，同时j记录了当前位置;<br>3.若到了链表的末尾p仍为空的话，则表示第i个结点不存在，返回ERROR;<br>4.若不为空，则说明有该数据，并且返回p-&gt;data;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Status GetElem(LinkList L, int i, ElemType *e)&#123;</span><br><span class="line"></span><br><span class="line">    int j;</span><br><span class="line">    LinkList p;</span><br><span class="line">    p = L-&gt;next;</span><br><span class="line">    j = 1;</span><br><span class="line">    while( p &amp;&amp; j&lt;i)&#123;</span><br><span class="line">    </span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        ++j; //如果用++j会咋样？</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line">    if(!p || j &gt; i) //如果p为空指针或j&gt;i</span><br><span class="line">        return ERROR;</span><br><span class="line">    *e = p-&gt; data;</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在单链表中插入s"><a href="#在单链表中插入s" class="headerlink" title="在单链表中插入s"></a>在单链表中插入s</h2><p>核心：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s-&gt; next = p-&gt; next;</span><br><span class="line">p-&gt;next  = s;</span><br></pre></td></tr></table></figure>
+
+<p>思路：</p>
+<p>1.声明p指向链表头结点，初始化j从1开始（记录当前位置）<br>2.当j&lt;i，遍历链表，不断移动p、j，记录当前的位置。<br>3.若到了链表的末尾p还是空的，那么说明第i个结点不存在。<br>4.不然就说明查找成功，且在空间中生成了一个空结点s；<br>5.将数据信息e赋给s-&gt;data<br>6.把结点s插入到p后面<br>7.返回成功</p>
+<p>图例：</p>
+<p><img src="https://i.loli.net/2020/08/01/2pZkGCns6tESINX.jpg" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Status ListInsert(LinkList *L, int i, ElemType e)&#123;</span><br><span class="line"></span><br><span class="line">    int j;</span><br><span class="line">    LinkList p,s;</span><br><span class="line">    p = *L;</span><br><span class="line">    j = 1;</span><br><span class="line">    while(p &amp;&amp; j&lt;i)&#123;</span><br><span class="line">    </span><br><span class="line">        p = p-&gt;next;</span><br><span class="line">        ++j;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    if(!p || j&gt;i)</span><br><span class="line">        return ERROR;</span><br><span class="line">        </span><br><span class="line">    s = (LinkList)malloc(sizeof(Node)); //c语言申请内存空间的写法</span><br><span class="line">    s-&gt;data = e;</span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    return OK;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在单链表中删除"><a href="#在单链表中删除" class="headerlink" title="在单链表中删除"></a>在单链表中删除</h2><p>思路：</p>
+<p>1.声明p指向链表头结点，初始化j从1开始；<br>2.当j&lt;i，遍历链表，让p向后移动，j记录p的移动次数；<br>3.若到了链表末尾p为空，则第i个结点不存在；<br>4.不然就查找成功，把要删除的结点p-&gt;next赋给q；<br>5.删除p-&gt;next</p>
+<blockquote>
+<p>方法：<br>q = p-&gt;next;<br>p-&gt;next = q-&gt;next;</p>
+</blockquote>
+<p>6.将q结点中的数据赋给e，作为返回；<br>7.释放q结点<br>8.返回true则ok</p>
+<p>图例：<br><img src="https://i.loli.net/2020/08/01/7rlYUsOCxJymRP3.jpg" alt></p>
+<p>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Status ListDelete(Linklist *L, int i; ElemenType *e)&#123;</span><br><span class="line">    int j;</span><br><span class="line">    Linklist p,q;</span><br><span class="line">    p = *L;</span><br><span class="line">    j = 1;</span><br><span class="line">    while( p-&gt;next &amp;&amp; j &lt; i)&#123;</span><br><span class="line">    </span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">    ++j</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    if(!(p-&gt;next) || j &gt; i)</span><br><span class="line">        return ERROR;</span><br><span class="line">    q= p-&gt;next; //这三行很关键</span><br><span class="line">    *e = q-&gt;data; //这三行很关键,这行是把删除的值赋给e</span><br><span class="line">    p-&gt;next = q-&gt;next; //这三行很关键</span><br><span class="line">    free(q);</span><br><span class="line">    return OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="头插法单链表整表创建（始终让新结点在第一的位置）"><a href="#头插法单链表整表创建（始终让新结点在第一的位置）" class="headerlink" title="头插法单链表整表创建（始终让新结点在第一的位置）"></a>头插法单链表整表创建（始终让新结点在第一的位置）</h2><p>思路：</p>
+<p>1.声明指针p和计数变量i；<br>2.初始化一个空链表L<br>3.让L的头结点的指针指向NULL（建立带头结点的单链表）<br>4.循环：</p>
+<blockquote>
+<p>生成一个新结点赋给p；<br>生成一个数字赋值给p-&gt;data;<br>将p插入到头结点与新结点之间</p>
+</blockquote>
+<p>创建带表头结点的单链线性表L<br>代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void CreateListHead(LinkList *L, int n)&#123;</span><br><span class="line">    LinkList p;</span><br><span class="line">    int i;</span><br><span class="line">    srand(time(0)) //初始化随机数种子，为了后面生成随机数用</span><br><span class="line">    *L = (LinkList)malloc(sizeof(Node)); //申请一空间</span><br><span class="line">    (*L)-&gt;next = NULL; //建立一个带头结点的单链表</span><br><span class="line">    for(i = 0;i &lt; n; i++)&#123;</span><br><span class="line">        p = (LinkList)malloc(sizeof(Node));</span><br><span class="line">        p-&gt;data = rand()%100 + 1; //随机生成100以内的数字</span><br><span class="line">        p-&gt;next = (*L)-&gt;next; //头插法写法</span><br><span class="line">        (*L)-&gt;next = p; //头插法写法</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="尾插法单链表整表创建（每次新结点豆插在终端结点的后面）"><a href="#尾插法单链表整表创建（每次新结点豆插在终端结点的后面）" class="headerlink" title="尾插法单链表整表创建（每次新结点豆插在终端结点的后面）"></a>尾插法单链表整表创建（每次新结点豆插在终端结点的后面）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void CreateListTail(LinkList *L, int n)&#123;</span><br><span class="line"></span><br><span class="line">    LinkList p,r;</span><br><span class="line">    int i;</span><br><span class="line">    srand(time(0));</span><br><span class="line">    *L = (LinkList)malloc(sizeof(Node));</span><br><span class="line">    r = *L;</span><br><span class="line">    for(i = 0; i &lt;n ;i++)&#123;</span><br><span class="line">        p = (Node*)malloc(sizeof(Node));</span><br><span class="line">        p-&gt;data = rand()%100 + 1;</span><br><span class="line">        r-&gt;next = p; //尾插法写法</span><br><span class="line">        r = p; //尾插法写法，保证r处于最后的结点</span><br><span class="line">    &#125;</span><br><span class="line">    r-&gt;next = NULL; //表示链表结束了</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注： 这里的L是指整个单链表，而r指的是指向尾结点的变量</p>
+</blockquote>
+<h2 id="单链表的整表删除"><a href="#单链表的整表删除" class="headerlink" title="单链表的整表删除"></a>单链表的整表删除</h2><p>思路：</p>
+<p>1.声明结点p和q；<br>2.将第一个节点赋给p；<br>3.循环：</p>
+<blockquote>
+<p>将下一结点赋值给q；<br>释放p；<br>将q赋值给p；</p>
+</blockquote>
+<p>代码：</p>
+<p>Status ClearList(LinkList *L){</p>
+<pre><code>LinkList p, q;
+q = (*L)-&gt;next;
+while(p){
+
+    q = p-&gt;next;
+    free(p);
+    p = q;
+
+}</code></pre><p>}</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/13/大一下总个结/" rel="next" title>
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/20/谢谢您，张莉老师/" rel="prev" title="谢谢您，张莉老师（大一下总个结）">
+                谢谢您，张莉老师（大一下总个结） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/IMG_2867.JPG" alt="天下5912">
+            
+              <p class="site-author-name" itemprop="name">天下5912</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#绪论和算法"><span class="nav-number">1.</span> <span class="nav-text">绪论和算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑结构（面向问题）"><span class="nav-number">1.1.</span> <span class="nav-text">逻辑结构（面向问题）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理结构（面向计算机）"><span class="nav-number">1.2.</span> <span class="nav-text">物理结构（面向计算机）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的顺序存储结构"><span class="nav-number">2.</span> <span class="nav-text">线性表的顺序存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作（学习写法）"><span class="nav-number">2.1.</span> <span class="nav-text">准备工作（学习写法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求并集"><span class="nav-number">2.2.</span> <span class="nav-text">求并集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获得某个元素"><span class="nav-number">2.3.</span> <span class="nav-text">获得某个元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入某个元素"><span class="nav-number">2.4.</span> <span class="nav-text">插入某个元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除某个元素"><span class="nav-number">2.5.</span> <span class="nav-text">删除某个元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的链式存储结构（链表）"><span class="nav-number">3.</span> <span class="nav-text">线性表的链式存储结构（链表）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在单链表中获取第i个元素"><span class="nav-number">3.1.</span> <span class="nav-text">在单链表中获取第i个元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在单链表中插入s"><span class="nav-number">3.2.</span> <span class="nav-text">在单链表中插入s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在单链表中删除"><span class="nav-number">3.3.</span> <span class="nav-text">在单链表中删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头插法单链表整表创建（始终让新结点在第一的位置）"><span class="nav-number">3.4.</span> <span class="nav-text">头插法单链表整表创建（始终让新结点在第一的位置）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾插法单链表整表创建（每次新结点豆插在终端结点的后面）"><span class="nav-number">3.5.</span> <span class="nav-text">尾插法单链表整表创建（每次新结点豆插在终端结点的后面）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单链表的整表删除"><span class="nav-number">3.6.</span> <span class="nav-text">单链表的整表删除</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">天下5912</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KIow5iwp05RGDjq5nAtDyEOP-gzGzoHsz',
+    appKey: '2XW05bLgrS2KIMyr2X7y6wRt',
+    placeholder: '写点什么吧！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

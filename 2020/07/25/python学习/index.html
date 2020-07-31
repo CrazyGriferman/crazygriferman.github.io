@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="12fname = input(&amp;apos;Enter the file name: &amp;apos;)fhand = open(fname)   输入的时候文件的后缀，不然无法识别  123456fhand = open(&amp;apos;mbox-short.txt&amp;apos;)for line in fhand:    line = line.rstrip()    if not line.start">
+<meta property="og:type" content="article">
+<meta property="og:title" content="锁眼里看世界">
+<meta property="og:url" content="http://www.crazygriferman.com/2020/07/25/python学习/index.html">
+<meta property="og:site_name" content="锁眼里看世界">
+<meta property="og:description" content="12fname = input(&amp;apos;Enter the file name: &amp;apos;)fhand = open(fname)   输入的时候文件的后缀，不然无法识别  123456fhand = open(&amp;apos;mbox-short.txt&amp;apos;)for line in fhand:    line = line.rstrip()    if not line.start">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-07-30T08:45:15.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="锁眼里看世界">
+<meta name="twitter:description" content="12fname = input(&amp;apos;Enter the file name: &amp;apos;)fhand = open(fname)   输入的时候文件的后缀，不然无法识别  123456fhand = open(&amp;apos;mbox-short.txt&amp;apos;)for line in fhand:    line = line.rstrip()    if not line.start">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://www.crazygriferman.com/2020/07/25/python学习/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title> | 锁眼里看世界</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">锁眼里看世界</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-english-learning">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/English-Learning" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>英语学习</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-technology">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/technology" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-life">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/life" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>生活</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-reading">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/reading" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>阅读</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-thinking">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/thinking" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>思考</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.crazygriferman.com/2020/07/25/python学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="天下5912">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/IMG_2867.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="锁眼里看世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-07-25 15:55:35" itemprop="dateCreated datePublished" datetime="2020-07-25T15:55:35+08:00">2020-07-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-07-30 16:45:15" itemprop="dateModified" datetime="2020-07-30T16:45:15+08:00">2020-07-30</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2020/07/25/python学习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/07/25/python学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2020/07/25/python学习/" class="leancloud_visitors" data-flag-title>
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fname = input(&apos;Enter the file name: &apos;)</span><br><span class="line">fhand = open(fname)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输入的时候文件的后缀，不然无法识别</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fhand = open(&apos;mbox-short.txt&apos;)</span><br><span class="line">for line in fhand:</span><br><span class="line">    line = line.rstrip()</span><br><span class="line">    if not line.startswith(&apos;From: &apos;) :</span><br><span class="line">        continue</span><br><span class="line">    print(line)</span><br></pre></td></tr></table></figure>
+
+<p>如果没有带From的话就执行continue，不执行下行的 <strong><em>print(line)</em></strong></p>
+<p>range函数，主要用于数组</p>
+<blockquote>
+<p>the range function returns a list of numbers that range from zero to one less than the parameter.</p>
+</blockquote>
+<p>比如<strong>print(range(4))</strong></p>
+<p>它的输出是:</p>
+<p>[0,1,2,3,4]</p>
+<p>通常用于循环的条件，类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for i in range(len(friend)):</span><br></pre></td></tr></table></figure>
+
+<p>它等同于</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for friend in friends:</span><br></pre></td></tr></table></figure>
+
+<p>collection，类似于数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for i in [5,4,3,2,1]:</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
+
+<p>创建空列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stuff = list()</span><br><span class="line">stuff.append(fds) //往列表中添加元素</span><br><span class="line">stuff.sort() //将列表中的元素排序</span><br><span class="line">sum(stuff) //求和，列表中的元素想加</span><br><span class="line">max(stuff)</span><br><span class="line">min(stuff)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">numlist = list()</span><br><span class="line">while True:</span><br><span class="line">    inp = input(&apos;Enter a number: &apos;)</span><br><span class="line">    if inp == &apos;done&apos;:</span><br><span class="line">        break</span><br><span class="line">    value = float(inp)</span><br><span class="line">    numlist.append(value) //将元素添加到列表中</span><br><span class="line">    average = sum(numlist)/len(numnlist) //求平均值 len(numlist)的值为列表中元素的个数</span><br><span class="line">    print(&apos;Average:&apos;,average)</span><br></pre></td></tr></table></figure>
+
+<p>split() 函数可以分割字符串，将字符串分割成一个一个词（以空格为单位），然后返回一个列表，列表的元素为之前字符串分割后的各个词</p>
+<blockquote>
+<p>split() 基于空格分割字符串</p>
+</blockquote>
+<p>为了防止有空列表出现，需要加一条这个:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if line == &apos; &apos;:</span><br><span class="line">    print(&apos;Skip Blank&apos;)</span><br><span class="line">    continue</span><br></pre></td></tr></table></figure>
+
+
+<p> 或者是</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if len(x) &lt; 1:</span><br><span class="line">    continue</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>防止空列表出现</p>
+</blockquote>
+<p>dictionary 类似于c++里stl的map。（我是这么联想的），一个元素由键和值组成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jjj = &#123; &apos;chunk : 1&apos; , &apos;fred&apos; : 42, &apos;jan&apos; : 100&#125;</span><br></pre></td></tr></table></figure>
+
+<p>x.keys() //返回键<br>x.values() //返回值<br>x.items() //返回键和值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">name = input(&apos;Enter file:&apos;)</span><br><span class="line">handle = open(name)</span><br><span class="line"></span><br><span class="line">counts = dict()</span><br><span class="line">for line in handle:</span><br><span class="line">    words = line.split()</span><br><span class="line">    for word in words:</span><br><span class="line">        counts[word] = counts.get(word,0)+1</span><br><span class="line"></span><br><span class="line">bigcount = None</span><br><span class="line">bigword = None</span><br><span class="line">for word,count in counts.items():</span><br><span class="line">    if bigcount is None or count &gt; bigcount:</span><br><span class="line">        bigword = word</span><br><span class="line">        bigcount = count</span><br><span class="line"></span><br><span class="line">print(bigword,bigcount)</span><br></pre></td></tr></table></figure>
+
+<p>tuple是一种不可更改的数据结构</p>
+<p>tuple可以进行比较</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(0,1,2) &lt; (5,1,2)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>它只会比较第一个<br>如果第一个相同则比较第二个</p>
+</blockquote>
+<p>遇到报错：</p>
+<blockquote>
+<p>SyntaxError: Non-ASCII character ‘\xe5’ in file</p>
+</blockquote>
+<p>这是因为编写python代码的时候有中文出现。</p>
+<p>解决办法：<br>在代码的第一行加入下面这段代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\#coding=utf-8</span><br></pre></td></tr></table></figure>
+
+<p>regular expression<br>正则表达式</p>
+<p>[0-9]+<br>one or more digits</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">x = &apos;My 2 favorite number are 19 and 42&apos;</span><br><span class="line">y = re.findall(&apos;[0-9]+&apos;,x) </span><br><span class="line">print(y)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import re</span><br><span class="line">x = &apos;My Favorite numbers are 19 and 42&apos;</span><br><span class="line">y = re.findall(&apos;[0-9]+&apos;,x)</span><br><span class="line">print(y)</span><br><span class="line">y = re.findall(&apos;[a-z]+&apos;,x)</span><br><span class="line">print(y)</span><br><span class="line">x = &apos;From: Using the : character&apos;</span><br><span class="line">y = re.findall(&apos;^F.+:&apos;,x) </span><br><span class="line"># ^后面跟的是指第一个匹配F的字符 +后面跟的是最后一个匹配：的字符，&apos;.&apos;表示一个或多个字符</span><br><span class="line">print(y)</span><br><span class="line">y = re.findall(&apos;^F.+?:&apos;,x)</span><br><span class="line"># +? 表示找到的偏向较短的字符串</span><br></pre></td></tr></table></figure>
+
+<p>double_split，指定从某个地方分割</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">line = &apos;From stephen.marquard@dsyct.ac.za Sat Jan 5 09:14:16 2008&apos;</span><br><span class="line">words = line.split()</span><br><span class="line">email = words[1]</span><br><span class="line">pieces = email.split(&apos;@&apos;) # 从@处分开</span><br><span class="line">print(pieces[1])</span><br></pre></td></tr></table></figure>
+
+<p>Regex version</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/07/20/谢谢您，张莉老师/" rel="next" title="谢谢您，张莉老师（大一下总个结）">
+                <i class="fa fa-chevron-left"></i> 谢谢您，张莉老师（大一下总个结）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/28/《大话数据结构》学习笔记2/" rel="prev" title="《大话数据结构》 学习笔记 1">
+                《大话数据结构》 学习笔记 1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/IMG_2867.JPG" alt="天下5912">
+            
+              <p class="site-author-name" itemprop="name">天下5912</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">天下5912</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KIow5iwp05RGDjq5nAtDyEOP-gzGzoHsz',
+    appKey: '2XW05bLgrS2KIMyr2X7y6wRt',
+    placeholder: '写点什么吧！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
