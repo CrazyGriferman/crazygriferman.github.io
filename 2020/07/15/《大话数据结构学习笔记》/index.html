@@ -103,7 +103,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2020/08/01/2pZkGCns6tESINX.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/08/01/7rlYUsOCxJymRP3.jpg">
-<meta property="og:updated_time" content="2020-07-31T17:49:50.981Z">
+<meta property="og:updated_time" content="2020-07-31T18:06:55.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《大话数据结构》 学习笔记 1">
 <meta name="twitter:description" content="今天主要学习了绪论、线性表和单链表三章（看到静态链表这里） 绪论和算法这作者也是挺有意思，模拟上课来给讲数据结构。 首先来看“数据结构”这个定义：  相互之间存在一种或多种特定关系的数据元素的集合。  说到这个特定关系，作者接下去讲， 提到了逻辑结构和物理结构这两种不同的结构。 逻辑结构（面向问题）主要有： 1.集合结构2.线性结构3.树形结构4.图形结构 在集合关系中每个元素彼此都没有关系；在线">
@@ -469,7 +469,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-01 01:49:50" itemprop="dateModified" datetime="2020-08-01T01:49:50+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 02:06:55" itemprop="dateModified" datetime="2020-08-01T02:06:55+08:00">2020-08-01</time>
               
             
           </span>
@@ -655,16 +655,8 @@
 <p>将下一结点赋值给q；<br>释放p；<br>将q赋值给p；</p>
 </blockquote>
 <p>代码：</p>
-<p>Status ClearList(LinkList *L){</p>
-<pre><code>LinkList p, q;
-q = (*L)-&gt;next;
-while(p){
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Status ClearList(LinkList *L)&#123;</span><br><span class="line"></span><br><span class="line">    LinkList p, q;</span><br><span class="line">    q = (*L)-&gt;next;</span><br><span class="line">    while(p)&#123;</span><br><span class="line">    </span><br><span class="line">        q = p-&gt;next;</span><br><span class="line">        free(p);</span><br><span class="line">        p = q;</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    q = p-&gt;next;
-    free(p);
-    p = q;
-
-}</code></pre><p>}</p>
 
       
     </div>
