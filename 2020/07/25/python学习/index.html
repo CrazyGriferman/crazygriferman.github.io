@@ -104,7 +104,7 @@
 <meta property="og:image" content="http://www.crazygriferman.com/2020/07/25/python学习/media/15970498310423.jpg">
 <meta property="og:image" content="http://www.crazygriferman.com/2020/07/25/python学习/media/15970500043501.jpg">
 <meta property="og:image" content="http://www.crazygriferman.com/2020/07/25/python学习/media/Jietu20200810-170020.jpg">
-<meta property="og:updated_time" content="2020-08-10T09:00:38.194Z">
+<meta property="og:updated_time" content="2020-08-11T15:54:04.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="锁眼里看世界">
 <meta name="twitter:description" content="12fname = input(&amp;apos;Enter the file name: &amp;apos;)fhand = open(fname)   输入的时候文件的后缀，不然无法识别  123456fhand = open(&amp;apos;mbox-short.txt&amp;apos;)for line in fhand:    line = line.rstrip()    if not line.start">
@@ -470,7 +470,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2020-08-10 17:00:38" itemprop="dateModified" datetime="2020-08-10T17:00:38+08:00">2020-08-10</time>
+                <time title="修改时间：2020-08-11 23:54:04" itemprop="dateModified" datetime="2020-08-11T23:54:04+08:00">2020-08-11</time>
               
             
           </span>
@@ -617,6 +617,14 @@
 <p><img src="media/15970498310423.jpg" alt="-w405"></p>
 <p><img src="media/15970500043501.jpg" alt="-w408"></p>
 <p><img src="media/Jietu20200810-170020.jpg" alt="Jietu20200810-170020"></p>
+<h1 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h1><p>Primary key - generally an integer auto-increment field</p>
+<p>Logical key - What the outside world uses for lookup</p>
+<p>Foreign key - generally an integer key pointing to a row in another table</p>
+<p>命令</p>
+<p>select <strong>Album.title, Artist.name</strong>(what we want to see) from <strong>Album join Artist</strong>(Tables that hold the data) on Album.artist_id = Artist.id(How the tables are linked)</p>
+<blockquote>
+<p>这边 join 有点像 “和” 了</p>
+</blockquote>
 
       
     </div>
@@ -784,7 +792,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">100</span>
+                    <span class="site-state-item-count">102</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -851,7 +859,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XML"><span class="nav-number">1.</span> <span class="nav-text">XML</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#XML"><span class="nav-number">1.</span> <span class="nav-text">XML</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database"><span class="nav-number">2.</span> <span class="nav-text">Database</span></a></li></ol></div>
             
 
           </div>
