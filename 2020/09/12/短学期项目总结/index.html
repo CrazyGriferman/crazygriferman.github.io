@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next gemini" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.2" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="9月7到9月11日是短学期，内容为python校内训练，简单来说就是“五天python自学”，最终要求做一个东西出来。说实话，这次课从老师那里了解最多的就是“数据分析”这四个字，然后an做zhuang出le了hao个duo东西。 我之前在看《点石成金》和《用户体验要素》这两本书，里面讲了很多关于交互界面设计方面的知识，看完其实觉得很虚。通过这次用python真正构建了一个界面，我才知道如果你又要写">
+<meta property="og:type" content="article">
+<meta property="og:title" content="短学期项目总结">
+<meta property="og:url" content="http://www.crazygriferman.com/2020/09/12/短学期项目总结/index.html">
+<meta property="og:site_name" content="锁眼里看世界">
+<meta property="og:description" content="9月7到9月11日是短学期，内容为python校内训练，简单来说就是“五天python自学”，最终要求做一个东西出来。说实话，这次课从老师那里了解最多的就是“数据分析”这四个字，然后an做zhuang出le了hao个duo东西。 我之前在看《点石成金》和《用户体验要素》这两本书，里面讲了很多关于交互界面设计方面的知识，看完其实觉得很虚。通过这次用python真正构建了一个界面，我才知道如果你又要写">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2020/09/12/GwfmnClOgeTdoY1.png">
+<meta property="og:image" content="https://i.loli.net/2020/09/12/VehXgwlFDS8iOPE.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/09/13/6OUuJWK9ARZMr8c.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/09/20/bP7duMUtDxc1K4I.png">
+<meta property="og:updated_time" content="2020-09-20T18:41:40.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="短学期项目总结">
+<meta name="twitter:description" content="9月7到9月11日是短学期，内容为python校内训练，简单来说就是“五天python自学”，最终要求做一个东西出来。说实话，这次课从老师那里了解最多的就是“数据分析”这四个字，然后an做zhuang出le了hao个duo东西。 我之前在看《点石成金》和《用户体验要素》这两本书，里面讲了很多关于交互界面设计方面的知识，看完其实觉得很虚。通过这次用python真正构建了一个界面，我才知道如果你又要写">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/12/GwfmnClOgeTdoY1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://www.crazygriferman.com/2020/09/12/短学期项目总结/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>短学期项目总结 | 锁眼里看世界</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">锁眼里看世界</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-english-learning">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/English-Learning" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>英语学习</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-technology">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/technology" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>技术</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-life">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/life" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>生活</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-reading">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/reading" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>阅读</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-thinking">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/thinking" rel="section"><i class="menu-item-icon fa fa-fw fa-angle-right"></i> <br>思考</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.crazygriferman.com/2020/09/12/短学期项目总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="天下5912">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/IMG_2867.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="锁眼里看世界">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">短学期项目总结
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-09-12 22:37:58" itemprop="dateCreated datePublished" datetime="2020-09-12T22:37:58+08:00">2020-09-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-09-21 02:41:40" itemprop="dateModified" datetime="2020-09-21T02:41:40+08:00">2020-09-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/thinking/" itemprop="url" rel="index"><span itemprop="name">thinking</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2020/09/12/短学期项目总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/09/12/短学期项目总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+            <span id="/2020/09/12/短学期项目总结/" class="leancloud_visitors" data-flag-title="短学期项目总结">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              
+                <span class="post-meta-item-text">阅读次数：</span>
+              
+                <span class="leancloud-visitors-count"></span>
+            </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>9月7到9月11日是短学期，内容为python校内训练，简单来说就是“五天python自学”，最终要求做一个东西出来。说实话，这次课从老师那里了解最多的就是“数据分析”这四个字，然后an做zhuang出le了hao个duo东西。</p>
+<p>我之前在看《点石成金》和《用户体验要素》这两本书，里面讲了很多关于交互界面设计方面的知识，看完其实觉得很虚。通过这次用python真正构建了一个界面，我才知道如果你又要写代码，又要思考界面的布局、控件的运用、用户与你做出来的“软件”交互的体验等等这些事情的话，是真的非常非常难。</p>
+<h1 id="安装mysql这条“蜀道”好难"><a href="#安装mysql这条“蜀道”好难" class="headerlink" title="安装mysql这条“蜀道”好难"></a>安装mysql这条“蜀道”好难</h1><p>老师刚开始给了11份ppt，里面有讲一些python的库，还有数据库这些东西。安装教程都是windows的，所以我只能另寻出路。我们老师说你可以试试装linux（不带图形交互界面的那种），然后配置一下各种环境，期间你会遇到各种，等这些问题都解决得差不都了，linux你也就差不多熟悉了。有一说一，用命令行安装软件是真的爽，前提是你得配置好各种前置的东西。我之前用pip指令安装python的包的时候，由于装了很多个版本的python，结果库都安装在别的版本路径下了，忙了好久才发现问题，那天我到凌晨4点才把问题搞定，安心睡觉。但是pip3也有装不了的包，这个时候就要去官网下whl文件安装，你还得找到对应的系统、版本，不然运行命令的时候也会报错。装pyqt5的时候我一行命令就搞定，但是装mysql的时候我真的“吐”了，安装还好，就是老是启动错误，主要是以下这三个问题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">（ERROR 1045 (28000): Access denied for user ‘root‘@‘localhost‘ (using password: YES)）</span><br><span class="line"></span><br><span class="line">The server quit without updating PID file</span><br><span class="line"></span><br><span class="line">Can&apos;t connect to local MySQL server through socket &apos;/tmp/mysql.sock&apos; (2)</span><br></pre></td></tr></table></figure>
+
+<p>这三个我每个都碰到了,期中第一个和第二个是有关联的。先说第一个，其实主要就是修改密码的问题，我参考了这篇文章，然后成功把密码修改了:</p>
+<p><a href="https://blog.csdn.net/qq_38262266/article/details/107445680?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159954257219195162127428%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=159954257219195162127428&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-107445680.pc_first_rank_v2_rank_v28&amp;utm_term=mac2020+ERROR+1045+28000+Acces&amp;spm=1018.2118.3001.4187" target="_blank" rel="noopener">https://blog.csdn.net/qq_38262266/article/details/107445680?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159954257219195162127428%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=159954257219195162127428&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-107445680.pc_first_rank_v2_rank_v28&amp;utm_term=mac2020+ERROR+1045+28000+Acces&amp;spm=1018.2118.3001.4187</a></p>
+<blockquote>
+<p>第一步：停止mysql服务<br>系统偏好设置 - mysql - stop mysql server<br>第二步：cd /usr/local/mysql/bin/ 第三步：sudo su 回车，输入管理员密码<br>第四步：输入 ./mysqld_safe –skip-grant-tables &amp; 第五步：上面的输出不用动，直接输入命令 ./mysql 回车，这时会进入mysql<br>第六步：输入FLUSH PRIVILEGES;<br>第七步：输入SET PASSWORD FOR ‘root’@’localhost’ = ’PASSWORD‘(这里写你的新密码)<br>第八步：quit；退出</p>
+</blockquote>
+<p>第二个和第三个我记得主要是命令敲错了，一个是我之前使用mysqld启动的，还有一个就是进入的界面不一样：</p>
+<p><img src="https://i.loli.net/2020/09/12/GwfmnClOgeTdoY1.png" alt></p>
+<p><img src="https://i.loli.net/2020/09/12/VehXgwlFDS8iOPE.jpg" alt></p>
+<p>其中下面那个才是有效的（我也不知道为啥），我弄第一个界面的时候碰到了那个密码的问题，试第二个界面的时候碰到了第二个和第三个问题。 我记得我忘了咋解决的，可能是把删了/tmp/mysql.sock这个文件删了，也可能是换了个命令。</p>
+<p>我现在就是用这两行启动mysql数据库的:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/mysql/bin/</span><br><span class="line">./mysql -uroot -pzqhs20010225</span><br></pre></td></tr></table></figure>
+
+<h1 id="python和c写学生管理系统"><a href="#python和c写学生管理系统" class="headerlink" title="python和c写学生管理系统"></a>python和c写学生管理系统</h1><p>用python做一个学生管理系统和c语言不太一样，用python你可以调用各种各样的包，例如用pyqt5这个包和qtdesigner这个软件做图形界面，用mysql存储学生的信息，用numpy、matplotlib和pandas来绘制图表分析学生的成绩分布。而c语言考虑更多的，是如何更高效地存储学生的信息。（至少我是这么认为的）跑python的时候，我的电脑会有很“严重”的发热，特别是多开了几个图形界面的时候。c语言跑起来就不会这样。暑假看了点数据结构的东西，突然发现用c和c++来写这种界面的一定是大佬。用好的算法和好的数据结构来存储数据，这样软件占的内存才小。可惜我还太菜了，而且没搞过acm，很多数据结构都没有实际敲过。</p>
+<p>python有一点很像c++，c++文件一般由cpp和hpp两种文件构成。hpp一般是写类的定义的，然后通过 #include “x.hpp” 导入到cpp文件里。在python中，我们把一个个文件都看成是一个包，通过import 文件名就可以导入这个包，但是导入了之后一般都会运行那个包的内容，所以包里一般都是写的函数，然后用”from x import y”，这样就可以调用x文件里的y函数了。</p>
+<h1 id="上课时发生的一些事情"><a href="#上课时发生的一些事情" class="headerlink" title="上课时发生的一些事情"></a>上课时发生的一些事情</h1><p>我们老师跟我们说，python就是用来做数据分析的，如果没有数据，其实python就是**，关键是要有好的数据。python只是用来分析数据的工具，所以我们学院很多老师都是和别的专业的老师有合作，或者是到企业里，因为这样才有真实的数据。上课的时候我们老师还一直跟我们安利说他有项目，如果用兴趣的可以找他（不就是搬砖吗…）</p>
+<p>在最后做完演示之后，我跟老师聊了一会儿，他跟我说我们现在学的无论是python，还是机器学习，深度学习啥的，都是工具，真正要做数据分析，你得要有行业知识。我又问他那能不能直接问用户他有什么需求，他说不行的，你得比用户还要懂。比如说做一个炒股软件，你如果不懂k-线图这种基本的东西，是根本做不了的，而且这种行业知识没个几年你是积累不起来的。</p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>下面来具体说说这次项目，前两天其实都是在安装东西，到了第三天才开始真正的开mo发gai。</p>
+<p>我们已经确定了要做一个学生管理系统，但不能只是简单地“增删改查”，还得加点东西，我想到老师上课一直在讲成绩分析，我就想能不能利用已有的成绩数据，在用户界面上添加个按钮用于绘制图表。当然，这样空想没用，我得把它写下来。前期写“需求功能”的时候我用了便利贴，然后把它们贴在纸上（或者是白板上），类似这样：</p>
+<p><img src="https://i.loli.net/2020/09/13/6OUuJWK9ARZMr8c.jpg" alt></p>
+<blockquote>
+<p>这样每拿一个便利贴就是一个任务</p>
+</blockquote>
+<p>要在两天之内搞出一个图形界面，还要实现功能，这是一个比较难的事情（因为其实大部分都是我来干），所以我就在github上找了个开源的项目，在它的代码的基础上改一改（魔改的那种）。</p>
+<blockquote>
+<p><a href="https://github.com/abhishek305/Student-Record-Maintainer-In-PyQT5" target="_blank" rel="noopener">https://github.com/abhishek305/Student-Record-Maintainer-In-PyQT5</a><br>github真的太好用了!</p>
+</blockquote>
+<p>我主要负责图形界面和数据库的部分，组里的另外一个同学主要负责实现生成图表的功能，然后我来统一。</p>
+<p><strong>统一变量命名</strong>是比较重要的一个点，如果这点没有确定好，后面你同学写的代码发过来之后你就会发现用不了，因为变量名字不统一。这个我们一开始用的英文，但是为了后期界面上看的舒服就用了中文（其实pyqt5上有可以替换英文为中文的命令，不需要直接修改变量的名字），最后我改的时候就非常头疼。</p>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><p>我感觉写这种代码比写那种算法或者是运用数据结构要“简单”些，像算法和数据结构你要考虑的是所用的内存和运行的速度，而我现在写的东西是要考虑不止是内存和运行的问题，我们主要把重心放到了功能上面，其实界面这个方面我没太考虑，或是我没时间考虑（还是naive）。</p>
+<h3 id="图形界面"><a href="#图形界面" class="headerlink" title="图形界面"></a>图形界面</h3><p>pyqt5是python一个用来写图形界面的包，配合qt designer，就可以“方便”地创造搞出一个比较好看的图形界面了。由于开源的那位作者没给ui文件，我只能通过代码来改写图形界面，修改后再一遍一遍地跑，导致我在这个上面花了很多的时间。由于代码比较多，这里只能贴一下主界面的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><span class="line">class MainWindow(QMainWindow):</span><br><span class="line">    def __init__(self, *args, **kwargs):</span><br><span class="line">        super(MainWindow, self).__init__(*args, **kwargs)</span><br><span class="line"></span><br><span class="line">        pg.setConfigOption(&apos;background&apos;, &apos;#19232D&apos;)</span><br><span class="line">        pg.setConfigOption(&apos;foreground&apos;, &apos;d&apos;)</span><br><span class="line">        pg.setConfigOptions(antialias = True)</span><br><span class="line">        self.setWindowIcon(QIcon(&apos;icon/g2.png&apos;)) </span><br><span class="line">        self.conn = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,</span><br><span class="line">            password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">        self.c = self.conn.cursor()                </span><br><span class="line">        self.c.close()</span><br><span class="line">        file_menu = self.menuBar().addMenu(&quot;&amp;File&quot;)</span><br><span class="line">        self.setWindowTitle(&quot;学生信息管理分析系统&quot;)</span><br><span class="line">        self.setMinimumSize(1000, 500)</span><br><span class="line"></span><br><span class="line">        self.tableWidget = QTableWidget()</span><br><span class="line">        self.setCentralWidget(self.tableWidget)</span><br><span class="line">        self.tableWidget.setAlternatingRowColors(True)</span><br><span class="line">        self.tableWidget.setColumnCount(9)</span><br><span class="line">        self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)</span><br><span class="line">        self.tableWidget.horizontalHeader().setSortIndicatorShown(False)</span><br><span class="line">        self.tableWidget.horizontalHeader().setStretchLastSection(True)</span><br><span class="line">        self.tableWidget.verticalHeader().setVisible(False)</span><br><span class="line">        self.tableWidget.verticalHeader().setCascadingSectionResizes(False)</span><br><span class="line">        self.tableWidget.verticalHeader().setStretchLastSection(False)</span><br><span class="line">        self.tableWidget.setHorizontalHeaderLabels((&quot;学号&quot;, &quot;姓名&quot;, &quot;性别&quot;, &quot;成绩&quot;,</span><br><span class="line">            &quot;专业&quot;, &quot;平时成绩&quot;,&quot;期中成绩&quot;,&quot;期末成绩&quot;,&quot;最终成绩&quot;))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        toolbar = QToolBar()</span><br><span class="line">        toolbar.setMovable(True)</span><br><span class="line">        self.addToolBar(toolbar)</span><br><span class="line"></span><br><span class="line">        statusbar = QStatusBar()</span><br><span class="line">        self.setStatusBar(statusbar)</span><br><span class="line"></span><br><span class="line">        btn_ac_adduser = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/add1.jpg&quot;), &quot;Add Student&quot;, self)   #add student icon</span><br><span class="line">        btn_ac_adduser.triggered.connect(self.insert)</span><br><span class="line">        btn_ac_adduser.setStatusTip(&quot;Add Student&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_adduser)</span><br><span class="line"></span><br><span class="line">        btn_ac_refresh = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/r3.png&quot;),&quot;Refresh&quot;,self)   #refresh icon</span><br><span class="line">        btn_ac_refresh.triggered.connect(self.loaddata)</span><br><span class="line">        btn_ac_refresh.setStatusTip(&quot;Refresh Table&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_refresh)</span><br><span class="line"></span><br><span class="line">        btn_ac_search = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/s1.png&quot;), &quot;Search&quot;, self)  #search icon</span><br><span class="line">        btn_ac_search.triggered.connect(self.search)</span><br><span class="line">        btn_ac_search.setStatusTip(&quot;Search User&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_search)</span><br><span class="line"></span><br><span class="line">        btn_ac_delete = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/d1.png&quot;), &quot;Delete&quot;, self)</span><br><span class="line">        btn_ac_delete.triggered.connect(self.delete)</span><br><span class="line">        btn_ac_delete.setStatusTip(&quot;Delete User&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_delete)</span><br><span class="line"></span><br><span class="line">        btn_ac_deleteAll = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/warning.jpeg&quot;), &quot;清空信息&quot;, self)   #add student icon</span><br><span class="line">        btn_ac_deleteAll.triggered.connect(self.deleteAll)</span><br><span class="line">        btn_ac_deleteAll.setStatusTip(&quot;delete Students&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_deleteAll)        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        adduser_action = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/Student Record Maintainer In Pyqt5/icon/add1.jpg&quot;),&quot;Insert Student&quot;, self)</span><br><span class="line">        adduser_action.triggered.connect(self.insert)</span><br><span class="line">        file_menu.addAction(adduser_action)</span><br><span class="line"></span><br><span class="line">        searchuser_action = QAction(QIcon(&quot;icon/s1.png&quot;), &quot;Search Student&quot;, self)</span><br><span class="line">        searchuser_action.triggered.connect(self.search)</span><br><span class="line">        file_menu.addAction(searchuser_action)</span><br><span class="line"></span><br><span class="line">        deluser_action = QAction(QIcon(&quot;icon/d1.png&quot;), &quot;Delete&quot;, self)</span><br><span class="line">        deluser_action.triggered.connect(self.delete)</span><br><span class="line">        file_menu.addAction(deluser_action)</span><br><span class="line">        &apos;&apos;&apos;        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        btn_ac_createGraph = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/graph.jpeg&quot;), &quot;数据分析&quot;, self)   #add student icon</span><br><span class="line">        btn_ac_createGraph.triggered.connect(self.openSecondDialog)</span><br><span class="line">        btn_ac_createGraph.setStatusTip(&quot;createGraph&quot;)</span><br><span class="line">        toolbar.addAction(btn_ac_createGraph)        </span><br><span class="line"></span><br><span class="line">       </span><br><span class="line"></span><br><span class="line">        openMenu = QAction(QIcon(&quot;/Users/zhaoqi/Documents/learn/college/computer/python/python校内训练/第三天/学生管理系统/python大作业/icon/import.png&quot;),&apos;导入 CSV文件&apos;, self)</span><br><span class="line">        openMenu.triggered.connect(self.open_sheet)                </span><br><span class="line">        file_menu.addAction(openMenu)</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    def open_sheet(self):</span><br><span class="line">        path = QFileDialog.getOpenFileName(self, os.getenv(&apos;HOME&apos;))</span><br><span class="line">        if path[0] != &quot;&quot;:</span><br><span class="line">            with open(path[0],newline = &quot;&quot;) as csv_file:</span><br><span class="line">                self.tableWidget.setRowCount(0)</span><br><span class="line">                self.tableWidget.setColumnCount(10)</span><br><span class="line">                my_file = csv.reader(csv_file,dialect = &apos;excel&apos;)</span><br><span class="line">                for row_number, row_data in enumerate(my_file):</span><br><span class="line">                    if row_data == [&apos;\ufeff学号&apos;, &apos;姓名&apos;, &apos;性别&apos;, &apos;年龄&apos;, &apos;专业&apos;, &apos;平时成绩&apos;,</span><br><span class="line">                     &apos;期中成绩&apos;, &apos;期末成绩&apos;, &apos;最终成绩&apos;]:</span><br><span class="line">                        continue</span><br><span class="line">                    self.tableWidget.insertRow(row_number-1)</span><br><span class="line">                    for column_number, data in enumerate(row_data):</span><br><span class="line">                        self.tableWidget.setItem(row_number-1, column_number,QTableWidgetItem(str(data)))</span><br><span class="line">                read_csv_to_mysql(path[0])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def deleteAll(self):</span><br><span class="line"></span><br><span class="line">        self.connection = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">        </span><br><span class="line">        self.cursor = self.connection.cursor()        </span><br><span class="line"></span><br><span class="line">        self.cursor.execute(&quot;DELETE from student&quot;)</span><br><span class="line">        self.cursor.connection.commit()</span><br><span class="line">        self.cursor.close()</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    def loaddata(self):</span><br><span class="line"></span><br><span class="line">        self.connection = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">        </span><br><span class="line">        self.cursor = self.connection.cursor()        </span><br><span class="line">        self.cursor.execute(&apos;SELECT * FROM student&apos;)</span><br><span class="line">        result = self.cursor.fetchall()</span><br><span class="line">        print(result)</span><br><span class="line">        self.cursor.connection.commit()</span><br><span class="line">        self.tableWidget.setRowCount(0)</span><br><span class="line">        for row_number, row_data in enumerate(result):</span><br><span class="line">            self.tableWidget.insertRow(row_number)</span><br><span class="line">            for column_number, data in enumerate(row_data):</span><br><span class="line">                self.tableWidget.setItem(row_number, column_number,QTableWidgetItem(str(data)))</span><br><span class="line">        self.connection.commit()</span><br><span class="line">        self.cursor.close()</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    def handlePaintRequest(self, printer):</span><br><span class="line">        document = QTextDocument()</span><br><span class="line">        cursor = QTextCursor(document)</span><br><span class="line">        model = self.table.model()</span><br><span class="line">        table = cursor.insertTable(</span><br><span class="line">            model.rowCount(), model.columnCount())</span><br><span class="line">        for row in range(table.rows()):</span><br><span class="line">            for column in range(table.columns()):</span><br><span class="line">                cursor.insertText(model.item(row, column).text())</span><br><span class="line">                cursor.movePosition(QTextCursor.NextCell)</span><br><span class="line">        document.print_(printer)</span><br><span class="line"></span><br><span class="line">    def insert(self):</span><br><span class="line">        dlg = InsertDialog()</span><br><span class="line">        dlg.exec_()</span><br><span class="line"></span><br><span class="line">    def delete(self):</span><br><span class="line">        dlg = DeleteDialog()</span><br><span class="line">        dlg.exec_()</span><br><span class="line"></span><br><span class="line">    def search(self):</span><br><span class="line">        dlg = SearchDialog()</span><br><span class="line">        dlg.exec_()</span><br><span class="line"></span><br><span class="line">    def getFile(self):</span><br><span class="line">        dlg = fileDialog()</span><br><span class="line">        dlg.exec_()</span><br><span class="line"></span><br><span class="line">    def openSecondDialog(self):</span><br><span class="line">        dlg = GraphDialog()</span><br><span class="line">        dlg.exec_()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def get_conn():</span><br><span class="line">    conn = pymysql.connect(host=&apos;localhost&apos;, port=3306, user=&apos;root&apos;, passwd=&apos;123&apos;, db=&apos;studentM&apos;, charset=&apos;utf8&apos;)</span><br><span class="line">    return conn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def insert(cur, sql, args):</span><br><span class="line">    cur.execute(sql, args)</span><br><span class="line"></span><br><span class="line"># 将csv文件导入到数据库中</span><br><span class="line">def read_csv_to_mysql(filename):</span><br><span class="line">    with codecs.open(filename=filename, mode=&apos;r&apos;, encoding=&apos;utf-8&apos;) as f:</span><br><span class="line">        reader = csv.reader(f)</span><br><span class="line">        </span><br><span class="line">        head = next(reader)</span><br><span class="line">        conn = get_conn()</span><br><span class="line">        cur = conn.cursor()</span><br><span class="line">        sql = &apos;insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s)&apos;</span><br><span class="line">        for item in reader:</span><br><span class="line">            if item[1] is None or item[1] == &apos;&apos;:  # item[1]作为唯一键，不能为null</span><br><span class="line">                continue</span><br><span class="line">            args = tuple(item)</span><br><span class="line">            print(args)</span><br><span class="line">            insert(cur, sql=sql, args=args)</span><br><span class="line">        conn.commit()</span><br><span class="line">        cur.close()</span><br><span class="line">        conn.close()</span><br></pre></td></tr></table></figure>
+
+<p>在写图形界面的时候，我有这样一种感觉：</p>
+<p>美术要和技术结合真的是非常困难。因为你在设计方面上想要实现的东西，可以在代码层面十分的难实现，由于这次开发时间比较短，我没有过多地考虑设计层面的东西，光是每个按钮链接的函数能成功调用我就谢天谢地了。</p>
+<h3 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h3><p>python和mysql数据库连接需要pymysql这个库，可视化界面用的是 “sequel pro”，这个软件。</p>
+<p>连接的核心代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">self.conn = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,</span><br><span class="line">            password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">        self.c = self.conn.cursor()                </span><br><span class="line">        self.c.close()</span><br></pre></td></tr></table></figure>
+
+<p>比如你要删除学生的信息，代码长这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">self.connection = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">        </span><br><span class="line">        self.cursor = self.connection.cursor()        </span><br><span class="line"></span><br><span class="line">        self.cursor.execute(&quot;DELETE from student&quot;)</span><br><span class="line">        self.cursor.connection.commit()</span><br><span class="line">        self.cursor.close()</span><br></pre></td></tr></table></figure>
+
+<p>这里的 self.cursor.execute(“ “)就是用于执行mysql的语句，我整个系统基本上只用到了增删改查这四个功能。</p>
+<p>还有一个刷新数据的功能也挺重要：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">def loaddata(self):</span><br><span class="line"></span><br><span class="line">    self.connection = pymysql.connect(host=&apos;localhost&apos;,user=&apos;root&apos;,password=&apos;123&apos;,port=3306,db=&apos;studentM&apos;)</span><br><span class="line">    </span><br><span class="line">    self.cursor = self.connection.cursor()        </span><br><span class="line">    self.cursor.execute(&apos;SELECT * FROM student&apos;)</span><br><span class="line">    result = self.cursor.fetchall()</span><br><span class="line">    print(result)</span><br><span class="line">    self.cursor.connection.commit()</span><br><span class="line">    self.tableWidget.setRowCount(0)</span><br><span class="line">    for row_number, row_data in enumerate(result):</span><br><span class="line">        self.tableWidget.insertRow(row_number)</span><br><span class="line">        for column_number, data in enumerate(row_data):</span><br><span class="line">            self.tableWidget.setItem(row_number, column_number,QTableWidgetItem(str(data)))</span><br><span class="line">    self.connection.commit()</span><br><span class="line">    self.cursor.close()</span><br></pre></td></tr></table></figure>
+
+<p>基本逻辑就是先和数据库连接，然后选中student表中的内容，再进行对这些内容抓取（我记得抓取后是一个字典，字典带字典的，数据库中的每一行内容都是一个字典元素），然后两层循环就是把抓取到的内容打印到界面上，这样就完成了刷新。</p>
+<h3 id="随机生成学生信息"><a href="#随机生成学生信息" class="headerlink" title="随机生成学生信息"></a>随机生成学生信息</h3><p>这里需要csv和pandas这个库，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">stuInforList=[]</span><br><span class="line">for i in range(1000):</span><br><span class="line">   x= getStuInfo()</span><br><span class="line">   stuInforList.append(x)</span><br><span class="line"></span><br><span class="line">a=pd.DataFrame(stuInforList)</span><br><span class="line">a.drop_duplicates(subset=[0],keep=&apos;first&apos;,inplace=True)</span><br><span class="line">outputpath=&apos;/Users/zhaoqi/Desktop/5.csv&apos;</span><br><span class="line">a.to_csv(outputpath,sep=&apos;,&apos;,index=False,header=[&apos;学号&apos;,&apos;姓名&apos;,&apos;性别&apos;,&apos;年龄&apos;,&apos;专业&apos;,&apos;平时成绩&apos;,&apos;期中成绩&apos;,&apos;期末&apos;,&apos;最终成绩&apos;],encoding=&apos;utf_8_sig&apos;)</span><br><span class="line">print(&quot;生成随机信息成功&quot;)</span><br></pre></td></tr></table></figure>
+
+<p>这里其实要处理下异常的。简单来说stuInforList是一个列表，利用pandas这个库把它转换成了dataframe格式，然后通过a.to_csv()，生成csv文件。</p>
+<h3 id="生成图表"><a href="#生成图表" class="headerlink" title="生成图表"></a>生成图表</h3><p>需要用到matplotlib、pandas和pymysql这三个库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">self.conn = pymysql.connect( host = &apos;localhost&apos;, user = &apos;root&apos;,  passwd = &apos;123&apos;,  db = &apos;studentM&apos;, port=3306, charset = &apos;utf8&apos;    )</span><br><span class="line">    self.aa = pd.read_sql(&apos;select * from student&apos;,conn)   </span><br><span class="line">    self.df = pd.DataFrame(aa)</span><br><span class="line">    self.conn.close()</span><br></pre></td></tr></table></figure>
+
+<p>这段意思是说先连接数据库，之后读取数据库中表的信息，再把读取到的内容转换为dataframe格式的文件，之后就用这个df文件来生成图表。</p>
+<p>生成图表需要用matplotlib，使用的时候会遇到字体错误的问题，需要有这行代码设定下默认的字体:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.rcParams[&quot;font.family&quot;] = &apos;Arial Unicode MS&apos; </span><br><span class="line"># 指定默认字体：解决plot不能显示中文问题</span><br></pre></td></tr></table></figure>
+
+<p>接下来就是各种生成图表的操作了，老师跟我们说，我们做的图表很简单，没有实际的价值（那肯定啊，都没有学这方面的内容，数据分析数据分析！）。</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p>我还记得那天写代码写到3点多，然后做ppt做到4点多，只睡了3个多小时就去教室了，本来以为会有个答辩，结果老师说没时间了就来做个演示就行，本来还想就这次答辩做个反思的，可惜。</p>
+<p>以下是整份ppt：</p>
+<p><img src="https://i.loli.net/2020/09/20/bP7duMUtDxc1K4I.png" alt></p>
+<p>做了一年多的ppt，我发现自己能够形成一种不同于别人的风格了。</p>
+<p>我的风格主要力求简洁，尽可能幽默（只要没碰到非常“严厉”的老师），一年来ppt的背景都是keynote的这个渐变主题（主要是我觉得真的好看…），关于ppt这个东西等会儿下一篇反思会说道。</p>
+<p>最后老师说我们的系统“还是比较简陋”，没有做那种爬虫啥的“升级系统”，我真的想吐槽，如果是五个人一起搞该多好！</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>这次python的短学期还是很有意义的，至少用python做出了个东西来。只是在团队协作方面，我还需要学习很多（不止这个方面），像软件工程和项目管理这种东西，只有结合实际的项目，学起来才会有收获。</p>
+<p>听说用git来进行文件的提交和更新的话效率会高很多，之后得把git的使用方法看一下。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+            
+              <div>
+                
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/09/06/pytorch环境配置/" rel="next" title="pytorch学习环境配置">
+                <i class="fa fa-chevron-left"></i> pytorch学习环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/09/21/演说反思 坚持自己的风格/" rel="prev" title="演说反思 坚持自己的风格">
+                演说反思 坚持自己的风格 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/IMG_2867.JPG" alt="天下5912">
+            
+              <p class="site-author-name" itemprop="name">天下5912</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">104</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#安装mysql这条“蜀道”好难"><span class="nav-number">1.</span> <span class="nav-text">安装mysql这条“蜀道”好难</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python和c写学生管理系统"><span class="nav-number">2.</span> <span class="nav-text">python和c写学生管理系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上课时发生的一些事情"><span class="nav-number">3.</span> <span class="nav-text">上课时发生的一些事情</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#实践"><span class="nav-number">4.</span> <span class="nav-text">实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">4.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">4.2.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形界面"><span class="nav-number">4.2.1.</span> <span class="nav-text">图形界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库"><span class="nav-number">4.2.2.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机生成学生信息"><span class="nav-number">4.2.3.</span> <span class="nav-text">随机生成学生信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成图表"><span class="nav-number">4.2.4.</span> <span class="nav-text">生成图表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果"><span class="nav-number">4.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">天下5912</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+  
+
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+
+
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'KIow5iwp05RGDjq5nAtDyEOP-gzGzoHsz',
+    appKey: '2XW05bLgrS2KIMyr2X7y6wRt',
+    placeholder: '写点什么吧！',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: true,
+    lang: 'zh-cn' || 'zh-cn'
+  });
+</script>
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
