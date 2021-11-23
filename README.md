@@ -1,1 +1,1 @@
-blog url: www.crazygriferman.com/
+blog url: http://crazygriferman.com
