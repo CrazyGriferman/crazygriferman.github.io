@@ -30,20 +30,15 @@ url: "https://crazygriferman.github.io" # the base hostname & protocol for your 
 #twitter_username: CrazyGriferman
 #github_username:  CrazyGriferman
 
-languages: ["en", "cn"]
 
-exclude_from_localizations: ["assets", "CNAME"]
-
-defaultLang: en
-languageNames:
-  en: English
-  cn: Chinese
 
 # Build settings
-theme: hexo-theme-academia
+# theme: hexo-theme-academia
+
+theme: yaoyao-liu/minimal-light
+
 plugins:
   - jekyll-feed
-  - jekyll-multiple-languages-plugin
 
 # Exclude from processing.
 # The following items will not be processed, by default.
