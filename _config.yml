@@ -35,7 +35,7 @@ url: "https://crazygriferman.github.io" # the base hostname & protocol for your 
 # Build settings
 # theme: hexo-theme-academia
 
-theme: yaoyao-liu/minimal-light
+theme: minimal-light
 
 plugins:
   - jekyll-feed
